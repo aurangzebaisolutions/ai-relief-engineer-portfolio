@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  directory = "client/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  VITE_RAG_BASE_URL = "https://REPLACE-WITH-YOUR-NGROK-STATIC-DOMAIN.ngrok-free.app"
