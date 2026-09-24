@@ -4,7 +4,6 @@ import {
   Github, Globe2, Linkedin, Mail, MessageCircle, Network, Phone, Radar,
   Send, Workflow, X,
 } from "lucide-react";
-import LiveRagDemo from "../components/LiveRag";
 
 type ChatMsg = { role: "me" | "user"; text: string };
 
@@ -227,14 +226,24 @@ export default function Home() {
           <div className="proof">
             <div>
               <h2 className="sec-title">Try the RAG system.</h2>
-              <p className="sec-sub">A working retrieval-augmented generation build: ingestion, semantic search, and answers with visible source context — not a screenshot of one.</p>
+              <p className="sec-sub">I build private, secure RAG systems for businesses. To test my live pipeline with your own sensitive PDFs, request a private workspace. I will set it up and send you the access details.</p>
               <div className="rag-modes">
-                <div className="rag-mode"><strong>Live backend</strong><small>Connected to my local RAG server through a secure tunnel — upload a PDF or ask the indexed documents anything.</small><button className="pill pill-dark" onClick={() => document.getElementById("rag-input")?.focus()}>Ask the documents <ArrowUpRight size={14} /></button></div>
-                <div className="rag-mode"><strong>Private test</strong><small>Need a dedicated workspace for sensitive files? Request one and I will set it up.</small><button className="pill pill-ghost" onClick={() => setRagOpen(true)}>Request access <ArrowUpRight size={14} /></button></div>
+                <div className="rag-mode">
+                  <strong>Private Test Workspace</strong>
+                  <small>Upload your own PDFs, ask questions, and see source-grounded answers in a secure environment.</small>
+                  <button className="pill pill-dark" onClick={() => setRagOpen(true)}>Request RAG Access <ArrowUpRight size={14} /></button>
+                </div>
               </div>
-              <small className="rag-note">Full tests are approved manually to keep the demo safe and stable.</small>
+              <small className="rag-note">Access is approved manually to keep the demo safe and secure.</small>
             </div>
-            <LiveRagDemo />
+            <div className="rag-win">
+              <div className="rw-bar"><i /><i /><i /><small>rag / private workspace</small></div>
+              <div className="rw-body">
+                <div className="rw-docs"><span className="file"><FileSearch size={16} /> your_document_01.pdf</span><span className="file"><FileSearch size={16} /> internal_policy.pdf</span></div>
+                <div className="rw-answer"><span className="rw-label"><Check size={12} /> grounded answer</span><p>"Your private AI assistant, answering strictly from your documents with verifiable sources."</p><span className="rw-src">source 01 / your_document_01.pdf</span></div>
+              </div>
+              <div className="rw-foot"><span>Secure & Private</span><Send size={13} /></div>
+            </div>
           </div>
         </section>
 
